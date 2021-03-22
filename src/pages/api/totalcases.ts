@@ -12,6 +12,6 @@ type CoronaDailyInfo = {
 export default (
   req: NextApiRequest,
   res: NextApiResponse<CoronaDailyInfo[]>
-) => {
+): void => {
   res.status(200).json(totalcases)
 }

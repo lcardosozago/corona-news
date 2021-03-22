@@ -1,7 +1,12 @@
 import React from 'react'
+import { CoronaInfo } from '../../pages/index'
 
-const InfoTable = ({ data }) => {
-  const twoLastCoronaDailyInfo = data.slice(Math.max(data.length - 2, 0))
+type InfoTableProps = {
+  cases: CoronaInfo[]
+}
+
+const InfoTable: React.FC<InfoTableProps> = ({ cases }: InfoTableProps) => {
+  const twoLastCoronaDailyInfo = cases.slice(Math.max(cases.length - 2, 0))
 
   const formatNumber = number => {
     return new Intl.NumberFormat('pt-BR').format(number)
