@@ -22,21 +22,32 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
   const lineChartLabels = []
-  const lineChartConfirmedCases = []
-  const lineChartDeathsCases = []
-  const lineChartHealedCases = []
-  const lineChartSuspectsCases = []
 
-  coronaCases.forEach((dayInfos, index) => {
-    lineChartLabels.push(dayInfos.date)
+  const confirmedCasesGrossValue = []
+  const deathCasesGrossValue = []
+  const healedCasesGrossValue = []
+  const suspectCasesGrossValue = []
+
+  const confirmedCasesAverageValue = []
+  const deathCasesAverageValue = []
+  const healedCasesAverageValue = []
+  const suspectCasesAverageValue = []
+
+  const averageDays = 7
+
+  for (let index = 0; index < coronaCases.length; index++) {
+    const [year, month, day] = coronaCases[index].date.split('-')
+    const date = `${day}/${month}/${year}`
+
+    lineChartLabels.push(date)
 
     if (index === 0) {
-      lineChartConfirmedCases.push(dayInfos.confirmed)
-      lineChartDeathsCases.push(dayInfos.deaths)
-      lineChartHealedCases.push(dayInfos.healed)
-      lineChartSuspectsCases.push(dayInfos.suspects)
+      confirmedCasesGrossValue.push(coronaCases[index].confirmed)
+      deathCasesGrossValue.push(coronaCases[index].deaths)
+      healedCasesGrossValue.push(coronaCases[index].healed)
+      suspectCasesGrossValue.push(coronaCases[index].suspects)
 
-      return
+      continue
     }
 
     const confirmed =
@@ -46,11 +57,42 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
     const suspects =
       coronaCases[index].suspects - coronaCases[index - 1].suspects
 
-    lineChartConfirmedCases.push(confirmed)
-    lineChartDeathsCases.push(deaths)
-    lineChartHealedCases.push(healed)
-    lineChartSuspectsCases.push(suspects)
-  })
+    confirmedCasesGrossValue.push(confirmed)
+    deathCasesGrossValue.push(deaths)
+    healedCasesGrossValue.push(healed)
+    suspectCasesGrossValue.push(suspects)
+
+    let sumConfirmed = 0
+    let sumDeaths = 0
+    let sumHealed = 0
+    let sumSuspects = 0
+
+    for (let dayCount = 1; dayCount <= averageDays; dayCount++) {
+      if (index - dayCount <= 0) {
+        continue
+      }
+
+      sumConfirmed += confirmedCasesGrossValue[index - dayCount]
+      sumDeaths += deathCasesGrossValue[index - dayCount]
+      sumHealed += healedCasesGrossValue[index - dayCount]
+      sumSuspects += suspectCasesGrossValue[index - dayCount]
+    }
+
+    const confirmedAverage = parseInt(sumConfirmed / averageDays)
+    const deathsAverage = parseInt(sumDeaths / averageDays)
+    const healedAverage = parseInt(sumHealed / averageDays)
+    const suspectsAverage = parseInt(sumSuspects / averageDays)
+
+    confirmedCasesAverageValue.push(confirmedAverage)
+    deathCasesAverageValue.push(deathsAverage)
+    healedCasesAverageValue.push(healedAverage)
+    suspectCasesAverageValue.push(suspectsAverage)
+  }
+
+  console.log(confirmedCasesAverageValue)
+  console.log(deathCasesAverageValue)
+  console.log(healedCasesAverageValue)
+  console.log(suspectCasesAverageValue)
 
   return (
     <>
@@ -62,19 +104,19 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
           <InfoTable cases={coronaCases} />
           <ConfirmedLineChart
             labels={lineChartLabels}
-            cases={lineChartConfirmedCases}
+            cases={confirmedCasesGrossValue}
           />
           <DeathsLineChart
             labels={lineChartLabels}
-            cases={lineChartDeathsCases}
+            cases={deathCasesGrossValue}
           />
           <HealedLineChart
             labels={lineChartLabels}
-            cases={lineChartHealedCases}
+            cases={healedCasesGrossValue}
           />
           <SuspectsLineChart
             labels={lineChartLabels}
-            cases={lineChartSuspectsCases}
+            cases={suspectCasesGrossValue}
           />
         </div>
       </main>
@@ -83,7 +125,9 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await axios.get('http://localhost:3000/api/totalcases')
+  const response = await axios.get(
+    `http://${process.env.HOSTNAME}:${process.env.PORT}/api/totalcases`
+  )
 
   return {
     props: {

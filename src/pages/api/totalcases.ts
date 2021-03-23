@@ -9,9 +9,13 @@ type CoronaDailyInfo = {
   suspects: number
 }
 
-export default (
+const handler = (
   req: NextApiRequest,
   res: NextApiResponse<CoronaDailyInfo[]>
 ): void => {
-  res.status(200).json(totalcases)
+  if (req.method === 'GET') {
+    res.status(200).json(totalcases)
+  }
 }
+
+export default handler
