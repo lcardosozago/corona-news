@@ -2,11 +2,12 @@ import React from 'react'
 import axios from 'axios'
 import Head from 'next/head'
 import InfoTable from '../components/tables/InfoTable'
-import ConfirmedLineChart from '../components/charts/ConfirmedLineChart'
-import DeathsLineChart from '../components/charts/DeathsLineChart'
-import HealedLineChart from '../components/charts/HealedLineChart'
-import SuspectsLineChart from '../components/charts/SuspectsLineChart'
+import ConfirmedChart from '../components/charts/ConfirmedChart'
+import DeathsChart from '../components/charts/DeathsChart'
+import HealedChart from '../components/charts/HealedChart'
+import SuspectsChart from '../components/charts/SuspectsChart'
 import { GetStaticProps, NextPage } from 'next'
+import Divider from '../components/Divider'
 
 export type CoronaInfo = {
   date: string
@@ -47,20 +48,13 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
       healedCasesGrossValue.push(coronaCases[index].healed)
       suspectCasesGrossValue.push(coronaCases[index].suspects)
 
+      confirmedCasesAverageValue.push(coronaCases[index].confirmed)
+      deathCasesAverageValue.push(coronaCases[index].deaths)
+      healedCasesAverageValue.push(coronaCases[index].healed)
+      suspectCasesAverageValue.push(coronaCases[index].suspects)
+
       continue
     }
-
-    const confirmed =
-      coronaCases[index].confirmed - coronaCases[index - 1].confirmed
-    const deaths = coronaCases[index].deaths - coronaCases[index - 1].deaths
-    const healed = coronaCases[index].healed - coronaCases[index - 1].healed
-    const suspects =
-      coronaCases[index].suspects - coronaCases[index - 1].suspects
-
-    confirmedCasesGrossValue.push(confirmed)
-    deathCasesGrossValue.push(deaths)
-    healedCasesGrossValue.push(healed)
-    suspectCasesGrossValue.push(suspects)
 
     let sumConfirmed = 0
     let sumDeaths = 0
@@ -78,21 +72,30 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
       sumSuspects += suspectCasesGrossValue[index - dayCount]
     }
 
-    const confirmedAverage = parseInt(sumConfirmed / averageDays)
-    const deathsAverage = parseInt(sumDeaths / averageDays)
-    const healedAverage = parseInt(sumHealed / averageDays)
-    const suspectsAverage = parseInt(sumSuspects / averageDays)
+    const confirmedGross =
+      coronaCases[index].confirmed - coronaCases[index - 1].confirmed
+    const deathsGross =
+      coronaCases[index].deaths - coronaCases[index - 1].deaths
+    const healedGross =
+      coronaCases[index].healed - coronaCases[index - 1].healed
+    const suspectsGross =
+      coronaCases[index].suspects - coronaCases[index - 1].suspects
+
+    confirmedCasesGrossValue.push(confirmedGross)
+    deathCasesGrossValue.push(deathsGross)
+    healedCasesGrossValue.push(healedGross)
+    suspectCasesGrossValue.push(suspectsGross)
+
+    const confirmedAverage = Math.floor(sumConfirmed / averageDays)
+    const deathsAverage = Math.floor(sumDeaths / averageDays)
+    const healedAverage = Math.floor(sumHealed / averageDays)
+    const suspectsAverage = Math.floor(sumSuspects / averageDays)
 
     confirmedCasesAverageValue.push(confirmedAverage)
     deathCasesAverageValue.push(deathsAverage)
     healedCasesAverageValue.push(healedAverage)
     suspectCasesAverageValue.push(suspectsAverage)
   }
-
-  console.log(confirmedCasesAverageValue)
-  console.log(deathCasesAverageValue)
-  console.log(healedCasesAverageValue)
-  console.log(suspectCasesAverageValue)
 
   return (
     <>
@@ -102,21 +105,29 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
       <main>
         <div className="flex flex-col justify-center container mx-auto">
           <InfoTable cases={coronaCases} />
-          <ConfirmedLineChart
+          <Divider />
+          <ConfirmedChart
             labels={lineChartLabels}
-            cases={confirmedCasesGrossValue}
+            grossValue={confirmedCasesGrossValue}
+            averageValue={confirmedCasesAverageValue}
           />
-          <DeathsLineChart
+          <Divider />
+          <DeathsChart
             labels={lineChartLabels}
-            cases={deathCasesGrossValue}
+            grossValue={deathCasesGrossValue}
+            averageValue={deathCasesAverageValue}
           />
-          <HealedLineChart
+          <Divider />
+          <HealedChart
             labels={lineChartLabels}
-            cases={healedCasesGrossValue}
+            grossValue={healedCasesGrossValue}
+            averageValue={healedCasesAverageValue}
           />
-          <SuspectsLineChart
+          <Divider />
+          <SuspectsChart
             labels={lineChartLabels}
-            cases={suspectCasesGrossValue}
+            grossValue={suspectCasesGrossValue}
+            averageValue={suspectCasesAverageValue}
           />
         </div>
       </main>
