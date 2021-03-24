@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import Head from 'next/head'
 import InfoTable from '../components/tables/InfoTable'
 import ConfirmedChart from '../components/charts/ConfirmedChart'
@@ -8,6 +7,8 @@ import HealedChart from '../components/charts/HealedChart'
 import SuspectsChart from '../components/charts/SuspectsChart'
 import { GetStaticProps, NextPage } from 'next'
 import Divider from '../components/Divider'
+
+import totalcases from '../assets/totalcasesms.json'
 
 export type CoronaInfo = {
   date: string
@@ -136,13 +137,9 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await axios.get(
-    `http://${process.env.HOSTNAME}:${process.env.PORT}/api/totalcases`
-  )
-
   return {
     props: {
-      coronaCases: response.data
+      coronaCases: totalcases
     }
   }
 }
