@@ -98,33 +98,51 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
     suspectCasesAverageValue.push(suspectsAverage)
   }
 
+  const [year, month, day] = coronaCases[coronaCases.length - 1].date.split('-')
+  const lastUpdatedDay = `${day}/${month}/${year}`
+
   return (
     <>
       <Head>
-        <title>Casos de Coronavírus no Mato Grosso do Sul</title>
+        <title>Casos de Coronavírus em Mato Grosso do Sul</title>
       </Head>
       <main>
         <div className="flex flex-col justify-center container mx-auto">
+          <div className="mx-auto my-6">
+            <h1 className="text-3xl mb-4">
+              Casos de Coronavírus em Mato Grosso do Sul
+            </h1>
+            <p className="text-lg">Data de atualização: {lastUpdatedDay}</p>
+          </div>
+
           <InfoTable cases={coronaCases} />
+
           <Divider />
+
           <ConfirmedChart
             labels={lineChartLabels}
             grossValue={confirmedCasesGrossValue}
             averageValue={confirmedCasesAverageValue}
           />
+
           <Divider />
+
           <DeathsChart
             labels={lineChartLabels}
             grossValue={deathCasesGrossValue}
             averageValue={deathCasesAverageValue}
           />
+
           <Divider />
+
           <HealedChart
             labels={lineChartLabels}
             grossValue={healedCasesGrossValue}
             averageValue={healedCasesAverageValue}
           />
+
           <Divider />
+
           <SuspectsChart
             labels={lineChartLabels}
             grossValue={suspectCasesGrossValue}
