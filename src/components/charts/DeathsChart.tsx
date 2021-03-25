@@ -28,6 +28,10 @@ const DeathsChart: React.FC<DeathsChartProps> = ({
         fill: false,
         backgroundColor: '#ef0000',
         borderColor: '#ef0000',
+        lineTension: 0.1,
+        pointBorderWidth: 1,
+        pointRadius: 1,
+        pointHoverRadius: 5,
         order: 2,
         data: averageValue,
         yAxisID: 1
@@ -72,7 +76,7 @@ const DeathsChart: React.FC<DeathsChartProps> = ({
     }
   }
 
-  return <Bar data={data} options={options} />
+  return <Bar width={500} height={300} data={data} options={options} />
 }
 
 export default DeathsChart

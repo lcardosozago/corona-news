@@ -4,7 +4,6 @@ import InfoTable from '../components/tables/InfoTable'
 import ConfirmedChart from '../components/charts/ConfirmedChart'
 import DeathsChart from '../components/charts/DeathsChart'
 import HealedChart from '../components/charts/HealedChart'
-import SuspectsChart from '../components/charts/SuspectsChart'
 import { GetStaticProps, NextPage } from 'next'
 import Divider from '../components/Divider'
 
@@ -110,7 +109,7 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
         <div className="flex flex-col justify-center container mx-auto">
           <div className="mx-auto text-center my-6">
             <h1 className="text-3xl mb-4">
-              Casos de Coronavírus em Mato Grosso do Sul
+              Painel do Coronavírus em Mato Grosso do Sul
             </h1>
             <p className="text-lg">Data de atualização: {lastUpdatedDay}</p>
           </div>
@@ -139,14 +138,6 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
             labels={lineChartLabels}
             grossValue={healedCasesGrossValue}
             averageValue={healedCasesAverageValue}
-          />
-
-          <Divider />
-
-          <SuspectsChart
-            labels={lineChartLabels}
-            grossValue={suspectCasesGrossValue}
-            averageValue={suspectCasesAverageValue}
           />
         </div>
       </main>

@@ -28,6 +28,10 @@ const HealedChart: React.FC<HealedChartProps> = ({
         fill: false,
         backgroundColor: '#26a300',
         borderColor: '#26a300',
+        lineTension: 0.1,
+        pointBorderWidth: 1,
+        pointRadius: 1,
+        pointHoverRadius: 5,
         order: 2,
         data: averageValue,
         yAxisID: 1
@@ -72,7 +76,7 @@ const HealedChart: React.FC<HealedChartProps> = ({
     }
   }
 
-  return <Bar data={data} options={options} />
+  return <Bar width={500} height={300} data={data} options={options} />
 }
 
 export default HealedChart

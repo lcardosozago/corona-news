@@ -28,6 +28,10 @@ const SuspectsChart: React.FC<SuspectsChartProps> = ({
         fill: false,
         backgroundColor: '#7c7c7c',
         borderColor: '#7c7c7c',
+        lineTension: 0.1,
+        pointBorderWidth: 1,
+        pointRadius: 1,
+        pointHoverRadius: 5,
         order: 2,
         data: averageValue,
         yAxisID: 1
@@ -72,7 +76,7 @@ const SuspectsChart: React.FC<SuspectsChartProps> = ({
     }
   }
 
-  return <Bar data={data} options={options} />
+  return <Bar width={500} height={300} data={data} options={options} />
 }
 
 export default SuspectsChart
