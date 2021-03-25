@@ -108,7 +108,7 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
       </Head>
       <main>
         <div className="flex flex-col justify-center container mx-auto">
-          <div className="mx-auto my-6">
+          <div className="mx-auto text-center my-6">
             <h1 className="text-3xl mb-4">
               Casos de Coronavírus em Mato Grosso do Sul
             </h1>
