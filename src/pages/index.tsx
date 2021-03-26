@@ -139,6 +139,8 @@ const Home: NextPage<HomeProps> = ({ coronaCases }: HomeProps) => {
             grossValue={healedCasesGrossValue}
             averageValue={healedCasesAverageValue}
           />
+
+          <Divider />
         </div>
       </main>
     </>
