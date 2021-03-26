@@ -16,8 +16,8 @@ const HealedChart: React.FC<HealedChartProps> = ({
     datasets: [
       {
         label: 'Casos curados',
-        backgroundColor: '#26a30066',
-        borderColor: '#26a30066',
+        backgroundColor: '#68b81766',
+        borderColor: '#68b81766',
         order: 1,
         data: grossValue,
         yAxisID: 1
@@ -26,8 +26,8 @@ const HealedChart: React.FC<HealedChartProps> = ({
         label: 'Média dos últimos 7 dias',
         type: 'line',
         fill: false,
-        backgroundColor: '#26a300',
-        borderColor: '#26a300',
+        backgroundColor: '#68b817',
+        borderColor: '#68b817',
         lineTension: 0.1,
         pointBorderWidth: 1,
         pointRadius: 1,

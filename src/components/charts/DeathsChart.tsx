@@ -16,8 +16,8 @@ const DeathsChart: React.FC<DeathsChartProps> = ({
     datasets: [
       {
         label: 'Casos de óbito',
-        backgroundColor: '#ef000066',
-        borderColor: '#ef000066',
+        backgroundColor: '#00000066',
+        borderColor: '#00000066',
         order: 1,
         data: grossValue,
         yAxisID: 1
@@ -26,8 +26,8 @@ const DeathsChart: React.FC<DeathsChartProps> = ({
         label: 'Média dos últimos 7 dias',
         type: 'line',
         fill: false,
-        backgroundColor: '#ef0000',
-        borderColor: '#ef0000',
+        backgroundColor: '#000000',
+        borderColor: '#000000',
         lineTension: 0.1,
         pointBorderWidth: 1,
         pointRadius: 1,
