@@ -4,203 +4,203 @@
     "suspects": 9,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-02",
     "suspects": 9,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-03",
     "suspects": 14,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-04",
     "suspects": 11,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-05",
     "suspects": 5,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-06",
     "suspects": 7,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-09",
     "suspects": 7,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-10",
     "suspects": 7,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-11",
     "suspects": 7,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-12",
     "suspects": 10,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-13",
     "suspects": 15,
     "confirmed": 0,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-14",
     "suspects": 1,
     "confirmed": 2,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-15",
     "suspects": 4,
     "confirmed": 2,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-16",
     "suspects": 33,
     "confirmed": 4,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-17",
     "suspects": 26,
     "confirmed": 6,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-18",
     "suspects": 48,
     "confirmed": 7,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-19",
     "suspects": 39,
     "confirmed": 9,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-20",
     "suspects": 52,
     "confirmed": 12,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-21",
     "suspects": 50,
     "confirmed": 16,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-22",
     "suspects": 50,
     "confirmed": 21,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-23",
     "suspects": 70,
     "confirmed": 21,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-24",
     "suspects": 38,
     "confirmed": 24,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-25",
     "suspects": 34,
     "confirmed": 24,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-26",
     "suspects": 53,
     "confirmed": 25,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-27",
     "suspects": 51,
     "confirmed": 28,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-28",
     "suspects": 47,
     "confirmed": 31,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-29",
     "suspects": 44,
     "confirmed": 36,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-30",
     "suspects": 51,
     "confirmed": 44,
     "deaths": 0,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-03-31",
     "suspects": 38,
     "confirmed": 48,
     "deaths": 1,
-    "healed": null
+    "healed": 0
   },
   {
     "date": "2020-04-01",
