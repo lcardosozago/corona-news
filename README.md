@@ -4,6 +4,8 @@
 
 Projeto desenvolvido para o site [Campo Grande News](https://www.campograndenews.com.br/) para informar ao leitor sobre casos do coronavírus em Mato Grosso do Sul.
 
+Projeto desenvolvido com NextJS, Typescript, TailwindCSS.
+
 ## Colocando o projeto para funcionar em desenvolvimento
 
 Clone o projeto em sua máquina, entre na pasta clonada e digite o comando:
