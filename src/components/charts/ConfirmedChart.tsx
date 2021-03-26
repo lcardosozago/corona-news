@@ -16,8 +16,8 @@ const ConfirmedChart: React.FC<ConfirmedChartProps> = ({
     datasets: [
       {
         label: 'Casos confirmados',
-        backgroundColor: '#dbd30066',
-        borderColor: '#dbd30066',
+        backgroundColor: '#f4883366',
+        borderColor: '#f4883366',
         order: 1,
         data: grossValue,
         yAxisID: 1
@@ -26,8 +26,8 @@ const ConfirmedChart: React.FC<ConfirmedChartProps> = ({
         label: 'Média dos últimos 7 dias',
         type: 'line',
         fill: false,
-        backgroundColor: '#dbd300',
-        borderColor: '#dbd300',
+        backgroundColor: '#f48833',
+        borderColor: '#f48833',
         lineTension: 0.1,
         pointBorderWidth: 1,
         pointRadius: 1,

@@ -1,29 +1,51 @@
-/* ./src/styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("../assets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"),
+    url("../assets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
 body {
-  @apply font-mono;
+  @apply font-montserrat bg-gray-100;
 }
 
 .cn-table {
-  @apply rounded-t-lg m-5 w-5/6 mx-auto bg-gray-200 text-gray-800;
+  @apply rounded-t-lg m-5 w-5/6 mx-auto text-gray-800;
 }
 
 .cn-table-row-head {
-  @apply text-left border-b-2 border-gray-300;
+  @apply text-left bg-gray-200;
 }
 
-.cn-table-row-body {
-  @apply bg-gray-100 border-b border-gray-200;
-}
+.cn-table-row-body {}
 
 .cn-table-column-space {
-  @apply px-4 py-3;
+  @apply px-4 py-3 border-4 bg-gray-100;
 }
 
-.cn-confirmed-color { @apply bg-yellow-200; }
-.cn-deaths-color { @apply bg-red-100; }
-.cn-healed-color { @apply bg-green-200; }
-.cn-suspects-color { @apply bg-blue-50; }
+.cn-confirmed-color {
+  @apply bg-table-confirmed text-white;
+}
+
+.cn-deaths-color {
+  @apply bg-table-deaths text-white;
+}
+
+.cn-healed-color {
+  @apply bg-table-healed text-white;
+}
+
+.cn-suspects-color {
+  @apply bg-table-suspects text-white;
+}

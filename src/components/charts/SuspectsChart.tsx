@@ -16,8 +16,8 @@ const SuspectsChart: React.FC<SuspectsChartProps> = ({
     datasets: [
       {
         label: 'Casos suspeitos',
-        backgroundColor: '#7c7c7c66',
-        borderColor: '#7c7c7c66',
+        backgroundColor: '#005c8366',
+        borderColor: '#005c8366',
         order: 1,
         data: grossValue,
         yAxisID: 1
@@ -26,8 +26,8 @@ const SuspectsChart: React.FC<SuspectsChartProps> = ({
         label: 'Média dos últimos 7 dias',
         type: 'line',
         fill: false,
-        backgroundColor: '#7c7c7c',
-        borderColor: '#7c7c7c',
+        backgroundColor: '#005c83',
+        borderColor: '#005c83',
         lineTension: 0.1,
         pointBorderWidth: 1,
         pointRadius: 1,
