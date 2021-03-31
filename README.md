@@ -2,7 +2,7 @@
 
 ## Corona News
 
-Projeto desenvolvido para o site [Campo Grande News](https://www.campograndenews.com.br/) para informar ao leitor sobre casos do coronavírus em Mato Grosso do Sul.
+Projeto desenvolvido para o site [Campo Grande News](https://www.campograndenews.com.br/) para informar ao leitor sobre casos de coronavírus em Mato Grosso do Sul.
 
 Projeto desenvolvido com NextJS, Typescript, TailwindCSS.
 
