@@ -2847,5 +2847,12 @@
     "confirmed": 231511,
     "deaths": 4940,
     "healed": 212448
+  },
+  {
+    "date": "2021-04-14",
+    "suspects": 7530,
+    "confirmed": 232849,
+    "deaths": 5005,
+    "healed": 213431
   }
 ]
